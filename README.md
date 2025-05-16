@@ -1,8 +1,8 @@
-## Coffee Shop
+# Coffee Shop
 
 This project implements a domain model for a Coffee Shop utilizing Object-Oriented Principles in Python programming.
 
-# Overview
+## Overview
 The model has the following entities:
 - [x] Customer: Individuals who purchase coffee
 - [x] Coffee: Types of coffee available
@@ -18,7 +18,7 @@ One-to-Many:
 + A coffee type can be included in many orders
     - Each order has one coffee type (quantity may vary)
 
-# Structure
+## Structure
 coffee_shop/
     └──lib/
         ├── customer.py
@@ -30,7 +30,7 @@ coffee_shop/
             ├── test_coffee.py
             └── test_order.py
 
-# Setup Instructions
+## Setup Instructions
 1. Clone this repository.
 2. Set up a virtual environment:
     > **pipenv install**
@@ -38,10 +38,10 @@ coffee_shop/
 3. Install pytest for testing:
     > **pipenv install pytest**
 
-# Testing
+## Testing
 + Run tests using pytest: **pytest**
 
 + You can also run debug.py to see a demonstration of the functionality: **python lib/debug.py**
 
-## Author
+# Author
 Enock Tangus
