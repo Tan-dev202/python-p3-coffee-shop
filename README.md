@@ -9,10 +9,11 @@ The model has the following entities:
 - [x] Order: Links customers with their coffee orders
 
 The relationships are:
-Many-to-Many (through Order entity):
+
+**Many-to-Many (through Order entity):**
 + Many customers can purchase many types of coffee
 
-One-to-Many:
+**One-to-Many:**
 + A customer can place many orders
     - Each order is assigned to only one customer
 + A coffee type can be included in many orders
