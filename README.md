@@ -18,18 +18,6 @@ One-to-Many:
 + A coffee type can be included in many orders
     - Each order has one coffee type (quantity may vary)
 
-## Structure
-coffee_shop/
-    └──lib/
-        ├── customer.py
-        ├── coffee.py
-        ├── order.py
-        ├── debug.py
-        └── tests/
-            ├── test_customer.py
-            ├── test_coffee.py
-            └── test_order.py
-
 ## Setup Instructions
 1. Clone this repository.
 2. Set up a virtual environment:
