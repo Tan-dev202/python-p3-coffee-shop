@@ -22,27 +22,30 @@ The relationships are:
 ## Setup Instructions
 1. Clone this repository.
 2. On the terminal, set up a virtual environment:
-    > **pipenv install**
-    > **pipenv shell**
+
+    pipenv install
+    pipenv shell
 
 ## Testing and Debugging
 1. Open your terminal. Start Python's interactive mode:
-    > **python**
+    
+    python
 
 2. Import the classes:
-    > **from customer import Customer**
-    > **from coffee import Coffee**
-    > **from order import Order**
+
+    from customer import Customer
+    from coffee import Coffee
+    from order import Order
 
 3. Type in your examples to see the output:
 
-    > alice = Customer("Alice")
-    > espresso = Coffee("Espresso")
-    > alice.create_order(espresso, 3.50)
+    alice = Customer("Alice")
+    espresso = Coffee("Espresso")
+    alice.create_order(espresso, 3.50)
 
-    > print(alice.coffees())
-    > print(espresso.num_orders())
-    > print(espresso.average_price())
+    alice.coffees()
+    espresso.num_orders()
+    espresso.average_price()
 
 # Author
 Enock Tangus
