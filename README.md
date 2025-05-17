@@ -21,16 +21,28 @@ The relationships are:
 
 ## Setup Instructions
 1. Clone this repository.
-2. Set up a virtual environment:
+2. On the terminal, set up a virtual environment:
     > **pipenv install**
     > **pipenv shell**
-3. Install pytest for testing:
-    > **pipenv install pytest**
 
-## Testing
-+ Run tests using pytest: **pytest**
+## Testing and Debugging
+1. Open your terminal. Start Python's interactive mode:
+    > **python**
 
-+ You can also run debug.py to see a demonstration of the functionality: **python lib/debug.py**
+2. Import the classes:
+    > **from customer import Customer**
+    > **from coffee import Coffee**
+    > **from order import Order**
+
+3. Type in your examples to see the output:
+
+    > alice = Customer("Alice")
+    > espresso = Coffee("Espresso")
+    > alice.create_order(espresso, 3.50)
+
+    > print(alice.coffees())
+    > print(espresso.num_orders())
+    > print(espresso.average_price())
 
 # Author
 Enock Tangus
