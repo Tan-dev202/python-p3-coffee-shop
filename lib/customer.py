@@ -1,3 +1,4 @@
+from order import Order
 class Customer:
     all_customers = []
     
@@ -20,7 +21,13 @@ class Customer:
         self._name = value
 
     def orders(self):
-        return self._orders
+        return self._orders # all orders for this customer
     
     def coffees(self):
         return list({order.coffee for order in self._orders}) # unique list of coffees for this customer
+    
+    def create_order(self, coffee, price):
+        new_order = Order(self, coffee, price)
+        return new_order # places order for this customer
+    
+    
