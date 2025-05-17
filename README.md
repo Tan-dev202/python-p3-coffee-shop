@@ -27,25 +27,11 @@ The relationships are:
     pipenv shell
 
 ## Testing and Debugging
-1. Open your terminal. Start Python's interactive mode:
+1. Run the debug.py file from the terminal:
     
-    python
+    python debug.py
 
-2. Import the classes:
-
-    from customer import Customer
-    from coffee import Coffee
-    from order import Order
-
-3. Type in your examples to see the output:
-
-    alice = Customer("Alice")
-    espresso = Coffee("Espresso")
-    alice.create_order(espresso, 3.50)
-
-    alice.coffees()
-    espresso.num_orders()
-    espresso.average_price()
+2. Examples (can be modified) in the file will be executed and the output will be shown.
 
 # Author
 Enock Tangus
