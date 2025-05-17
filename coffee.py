@@ -5,8 +5,11 @@ class Coffee:
         self._name = None
         self.name = name
         
-        self.all_coffees.append(self)
+        self.all_coffees.extend([self])
         self._orders = []
+    
+    def __repr__(self):
+        return f"Coffee(name='{self.name}')" # string representation of the coffee
         
     @property
     def name(self):

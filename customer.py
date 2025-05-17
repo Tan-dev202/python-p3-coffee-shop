@@ -1,12 +1,14 @@
-from order import Order
 class Customer:
     all_customers = []
     
     def __init__(self, name):
         self._name = None
         self.name = name
-        self.all_customers.append(self)
+        self.all_customers.extend([self])
         self._orders = []
+    
+    def __repr__(self):
+        return f"Customer(name='{self.name}')" # string representation of the customer
         
     @property
     def name(self):
@@ -27,7 +29,26 @@ class Customer:
         return list({order.coffee for order in self._orders}) # unique list of coffees for this customer
     
     def create_order(self, coffee, price):
+        from order import Order
         new_order = Order(self, coffee, price)
         return new_order # places order for this customer
     
-    
+    @classmethod
+    def most_aficionado(cls, coffee):
+        if not coffee.orders():
+            return None # when there are no customers for the specified coffee
+        
+        spending = {}
+        
+        for order in coffee.orders():
+            spending[order.customer] = spending.get(order.customer, 0) + order.price
+        
+        max_spender = None
+        max_spending = 0
+        
+        for top_customer, spent in spending.items():
+            if spent > max_spending:
+                max_spending = spent
+                max_spender = top_customer
+        
+        return max_spender # customer who spent the most on the specified coffee
