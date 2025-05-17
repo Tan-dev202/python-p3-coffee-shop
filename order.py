@@ -10,10 +10,10 @@ class Order:
         self.coffee = coffee
         self.price = price
         
-        self.all_orders.extend([self])
+        Order.all_orders.append(self)
         
-        customer._orders.extend([self]) # add to customer order list
-        coffee._orders.extend([self]) # add to coffee order list
+        customer._orders.append(self) # add to customer order list
+        coffee._orders.append(self) # add to coffee order list
     
     def __repr__(self):
         return f"Order(customer='{self.customer.name}', coffee='{self.coffee.name}', price={self.price})" # string representation of the order
@@ -26,7 +26,7 @@ class Order:
     def customer(self, value):
         from customer import Customer
         if not isinstance(value, Customer):
-            raise TypeError('The customer does not exist')
+            raise TypeError('The customer must be a Customer instance')
         self._customer = value
         
     @property
@@ -37,7 +37,7 @@ class Order:
     def coffee(self, value):
         from coffee import Coffee 
         if not isinstance(value, Coffee):
-            raise TypeError('The coffee does not exist')
+            raise TypeError('The coffee must be a Coffee instance')
         self._coffee = value
         
     @property
@@ -47,7 +47,7 @@ class Order:
     @price.setter
     def price(self, value):
         if not isinstance(value, (int, float)):
-            raise TypeError('Price should be a number (1.0 - 10.0)')
+            raise TypeError('Price must be a number (1.0 - 10.0)')
         if not (1.0 <= float(value) <= 10.0):
-            raise ValueError('Price should be between 1.0 and 10.0')
+            raise ValueError('Price must be between 1.0 and 10.0')
         self._price = float(value)

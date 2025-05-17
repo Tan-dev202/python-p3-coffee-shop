@@ -4,7 +4,7 @@ class Customer:
     def __init__(self, name):
         self._name = None
         self.name = name
-        self.all_customers.extend([self])
+        Customer.all_customers.append(self)
         self._orders = []
     
     def __repr__(self):
@@ -43,12 +43,4 @@ class Customer:
         for order in coffee.orders():
             spending[order.customer] = spending.get(order.customer, 0) + order.price
         
-        max_spender = None
-        max_spending = 0
-        
-        for top_customer, spent in spending.items():
-            if spent > max_spending:
-                max_spending = spent
-                max_spender = top_customer
-        
-        return max_spender # customer who spent the most on the specified coffee
+        return max(spending, key=spending.get, default=None) # customer who spent the most on the specified coffee

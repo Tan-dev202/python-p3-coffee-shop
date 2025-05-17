@@ -5,7 +5,7 @@ class Coffee:
         self._name = None
         self.name = name
         
-        self.all_coffees.extend([self])
+        Coffee.all_coffees.append(self)
         self._orders = []
     
     def __repr__(self):
@@ -20,7 +20,7 @@ class Coffee:
         if not isinstance(value, str):
             raise TypeError('Coffee name should be a string')
         if len(value) < 3:
-            raise ValueError('Coffee name should be not less than 3 characters')
+            raise ValueError('Coffee name should be at least 3 characters long')
         self._name = value
 
     def orders(self):
@@ -36,5 +36,4 @@ class Coffee:
         if not self._orders:
             return 0
         total = sum(order.price for order in self._orders)
-        count = len(self._orders)
-        return total / count # average price for this coffee based on its orders
+        return total / len(self._orders) # average price for this coffee based on its orders
