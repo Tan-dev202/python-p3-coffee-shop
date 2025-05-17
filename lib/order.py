@@ -4,10 +4,16 @@ class Order:
     all_orders = []
     
     def __init__(self, customer, coffee, price):
-        self._customer = customer
-        self._coffee = coffee
-        self._price = price
+        self._customer = None
+        self._coffee = None
+        self._price = None
+        
+        self.customer = customer
+        self.coffee = coffee
+        self.price = price
+        
         self.all_orders.append(self)
+        
         customer._orders.append(self) # add to customer order list
         coffee._orders.append(self) # add to coffee order list
         
@@ -37,7 +43,7 @@ class Order:
     
     @price.setter
     def price(self, value):
-        if not isinstance(value, float):
+        if not isinstance(value, (int, float)):
             raise TypeError('Price should be a number')
         if not (1.0 <= float(value) <= 10.0):
             raise ValueError('Price should be between 1.0 and 10.0')
@@ -45,7 +51,7 @@ class Order:
         
     
         
-# anne = Customer('Anne')
-# cappuccino = Coffee('Cappuccino')
+anne = Customer('Anne')
+cappuccino = Coffee('Cappuccino')
 
-# order1 = Order(anne, cappuccino, 7.50)
+order1 = Order(anne, cappuccino, 7.50)
