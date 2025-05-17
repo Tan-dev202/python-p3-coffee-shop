@@ -24,6 +24,7 @@ The relationships are:
 2. On the terminal, set up a virtual environment:
 
     pipenv install
+    
     pipenv shell
 
 ## Testing and Debugging
