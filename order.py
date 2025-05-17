@@ -1,5 +1,5 @@
 class Order:
-    all_orders = []
+    orders = []
     
     def __init__(self, customer, coffee, price):
         self._customer = None
@@ -10,13 +10,13 @@ class Order:
         self.coffee = coffee
         self.price = price
         
-        Order.all_orders.append(self)
+        Order.orders.append(self)
         
-        customer._orders.append(self) # add to customer order list
-        coffee._orders.append(self) # add to coffee order list
+        customer._orders.append(self)
+        coffee._orders.append(self)
     
     def __repr__(self):
-        return f"Order(customer='{self.customer.name}', coffee='{self.coffee.name}', price={self.price})" # string representation of the order
+        return f"Order(customer='{self.customer.name}', coffee='{self.coffee.name}', price={self.price})"
         
     @property
     def customer(self):
