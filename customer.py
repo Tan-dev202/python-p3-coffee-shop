@@ -7,9 +7,6 @@ class Customer:
         Customer.customers.append(self)
         self._orders = []
     
-    def __repr__(self):
-        return f"Customer(name='{self.name}')"
-        
     @property
     def name(self):
         return self._name

@@ -8,9 +8,6 @@ class Coffee:
         Coffee.coffees.append(self)
         self._orders = []
     
-    def __repr__(self):
-        return f"Coffee(name='{self.name}')"
-        
     @property
     def name(self):
         return self._name
